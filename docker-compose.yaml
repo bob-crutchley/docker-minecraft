@@ -5,6 +5,10 @@ services:
     ports:
     - target: 25565
       published: 25565
+      protocol: tcp
+    - target: 25565
+      published: 25565
+      protocol: udp
     volumes:
     - type: volume
       source: minecraft
