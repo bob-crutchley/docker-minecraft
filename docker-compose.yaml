@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  minecraft:
+    build: .
+    ports:
+    - target: 25565
+      published: 25565
+    volumes:
+    - type: volume
+      source: minecraft
+      target: /home/minecraft
+volumes:
+  minecraft:
