@@ -6,6 +6,5 @@ USER minecraft
 WORKDIR /home/minecraft
 RUN wget $(curl -s https://www.minecraft.net/en-us/download/server/ | grep -oP 'https://launcher.mojang.com/v1/objects/[a-zA-Z0-9]+/server.jar')
 RUN echo "eula=true" > eula.txt
-COPY server.properties .
 ENTRYPOINT ["/usr/bin/java", "-Xmx1024M", "-Xms1024M", "-jar", "server.jar", "nogui"]
 
