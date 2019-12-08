@@ -7,6 +7,7 @@ Minecraft server configured in a Docker container.
 - Docker Compose (Will already be installed if you are using MacOS or Windows)
 
 ### Setup
+Open up a terminal and run the commands shown below to get setup.
 
 #### Clone the Repository
 ```bash
