@@ -12,6 +12,7 @@
 
 main() {
     configure
+    mkdir -p ${INSTALL_DIRECTORY}
     curl -o ${INSTALL_DIRECTORY}/server.jar "$(server_download_url)"
 }
 
@@ -22,6 +23,8 @@ configure() {
     VERSION_MANIFEST_JSON=$(curl -L "${VERSION_MANIFEST_URL}")
     test -n "${VERSION}" \
         || VERSION=$(echo "${VERSION_MANIFEST_JSON}" | jq -r ".latest.release")
+    test -n "${INSTALL_DIRECTORY}" \
+        || INSTALL_DIRECTORY=/minecraft
 }
 
 server_download_url() {
